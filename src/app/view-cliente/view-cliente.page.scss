@@ -2,7 +2,6 @@ ion-item {
   --inner-padding-end: 0;
   --background: transparent;
 }
-
 ion-label {
   margin-top: 12px;
   margin-bottom: 12px;
@@ -37,4 +36,13 @@ h1 {
 
 p {
   line-height: 22px;
+}
+.info-wrapper {
+  display: flex;
+}
+.info-gerais, .info-contato {
+  border: solid 1px lightgrey;
+}
+.info-header {
+  background-color: #3880ff;
 }
