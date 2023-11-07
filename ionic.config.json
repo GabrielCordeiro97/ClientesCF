@@ -1,0 +1,7 @@
+{
+  "name": "ClientesCF",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

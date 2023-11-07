@@ -1,0 +1,27 @@
+<div class="row-cliente">
+
+  <ion-item
+    
+    *ngIf="cliente && checkFilter"
+    [detail]="false"
+  >
+    <ion-checkbox class="checkbox" [checked]="valorCheckboxMaster" (ionChange)="onCheckboxChange(cliente)"></ion-checkbox>
+    <ion-label class="ion-text-wrap">
+    </ion-label>
+    <div class="dados-cliente" [routerLink]="'/Cliente/' + cliente.id">
+      <h3>{{ cliente.id }}</h3>
+      <h3>{{ cliente.nomeComp }}</h3>
+      <h3>{{ cliente.nomeResumido }}</h3>
+      <h3>{{ cliente.cpf }}</h3>
+      <h3>{{ cliente.telefone }}</h3>
+      <h3>{{ cliente.celular }}</h3>
+      <h3>{{ cliente.email }}</h3>
+      <h3>{{ cliente.situacao }}</h3>
+      <h3>{{ cliente.nascimento }}</h3>
+      <h3>{{ cliente.endereco }}</h3>
+    </div>
+      <ion-button fill="blank" size="8">
+        <ion-icon slot="icon-only" color="danger" src="../../assets/icon/trash.svg"></ion-icon>
+      </ion-button>
+  </ion-item>
+</div>

@@ -1,0 +1,98 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Clientes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">
+        Clientes
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-list class="lista-wrapper">
+    <div class="botoesAcoes">
+      <ion-button color="light">
+        <ion-icon slot="start" src="../../assets/icon/grid-outline.svg"></ion-icon>
+        COLUNAS</ion-button>
+      <ion-button color="danger">EXPORTAR</ion-button>
+      <ion-button color="success">
+        <ion-icon slot="start" src="../../assets/icon/document.svg"></ion-icon>
+        NOVO
+      </ion-button>
+    </div>
+    <div class="campoPesquisa">
+      <ion-icon slot="start" src="../../assets/icon/send-sharp.svg" size="10"></ion-icon>
+      <ion-input class="input__campoPesquisa" placeholder="Pesquisar"></ion-input>
+    </div>
+    <ion-list-header>
+      <div class="botao-delete-master">
+        <ion-button color="danger" *ngIf="estadoCheckbox">
+          <ion-icon slot="icon-only" src="../../assets/icon/trash.svg"></ion-icon>
+        </ion-button>
+      </div>
+      <ion-label class="ion-label-list">Código <ion-icon slot="start" src="../../assets/icon/filter.svg"></ion-icon></ion-label>
+      <ion-label class="ion-label-list">Nome completo <ion-icon slot="start" src="../../assets/icon/filter.svg"></ion-icon></ion-label>
+      <ion-label class="ion-label-list">Nome resumido <ion-icon slot="start" src="../../assets/icon/filter.svg"></ion-icon></ion-label>
+      <ion-label class="ion-label-list">CPF <ion-icon slot="start" src="../../assets/icon/filter.svg"></ion-icon></ion-label>
+      <ion-label class="ion-label-list">Telefone <ion-icon slot="start" src="../../assets/icon/filter.svg"></ion-icon></ion-label>
+      <ion-label class="ion-label-list">Celular <ion-icon slot="start" src="../../assets/icon/filter.svg"></ion-icon></ion-label>
+      <ion-label class="ion-label-list">Email <ion-icon slot="start" src="../../assets/icon/filter.svg"></ion-icon></ion-label>
+      <ion-label class="ion-label-list">Situação <ion-icon slot="start" src="../../assets/icon/filter.svg"></ion-icon></ion-label>
+      <ion-label class="ion-label-list">Nascimento <ion-icon slot="start" src="../../assets/icon/filter.svg"></ion-icon></ion-label>
+      <ion-label class="ion-label-list">Endereço <ion-icon slot="start" src="../../assets/icon/filter.svg"></ion-icon></ion-label>
+      <div class="botoes-delete"></div>
+    </ion-list-header>
+    <tr class="lista-filtros">
+      <ion-checkbox (ionChange)="onCheckboxMaster()"></ion-checkbox>
+      <td>
+        <ion-input class="inputColuna" fill="outline" [(ngModel)]="filterValues.id" (ionInput)="checkFilter('id')"></ion-input>
+      </td>
+      <td>
+        <ion-input class="inputColuna" fill="outline" [(ngModel)]="filterValues.nomeComp" (ionInput)="checkFilter('nomeComp')"></ion-input>
+      </td>
+      <td>
+        <ion-input class="inputColuna" fill="outline" [(ngModel)]="filterValues.nomeResumido" (ionInput)="checkFilter('nomeResumido')"></ion-input>
+      </td>
+      <td>
+        <ion-input class="inputColuna" fill="outline" [(ngModel)]="filterValues.cpf" (ionInput)="checkFilter('cpf')"></ion-input>
+      </td>
+      <td>
+        <ion-input class="inputColuna" fill="outline"[(ngModel)]="filterValues.telefone" (ionInput)="checkFilter('telefone')"></ion-input>
+      </td>
+      <td>
+        <ion-input class="inputColuna" fill="outline"[(ngModel)]="filterValues.celular" (ionInput)="checkFilter('celular')"></ion-input>
+      </td>
+      <td>
+        <ion-input class="inputColuna"fill="outline"[(ngModel)]="filterValues.email" (ionInput)="checkFilter('email')"></ion-input>
+      </td>
+      <td>
+        <ion-input class="inputColuna"[disabled]="true" fill="outline"></ion-input>
+      </td>
+      <td>
+        <ion-input class="inputColuna"fill="outline"[(ngModel)]="filterValues.nascimento" (ionInput)="checkFilter('nascimento')"></ion-input>
+      </td>
+      <td>
+        <ion-input class="inputColuna"fill="outline"[(ngModel)]="filterValues.endereco" (ionInput)="checkFilter('endereco')"></ion-input>
+      </td>
+      <td>
+        <ion-input class="inputColuna"[disabled]="true" fill="outline" size="8"></ion-input>
+      </td>
+    </tr>
+    <app-cliente 
+        *ngFor="let cliente of listaFiltrada" 
+        (estadoCheckbox)="checkboxChanged()"
+        [cliente]="cliente" 
+        [valorCheckboxMaster]="checkboxMaster" 
+        [checkFilter]="listaFiltrada">
+    </app-cliente>
+  </ion-list>
+</ion-content>

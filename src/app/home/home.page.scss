@@ -1,0 +1,47 @@
+ion-list-header {
+    padding: 0;
+    border-bottom: 2px darkgray solid;
+}
+.ion-label-list {
+    text-align: center;
+    width: 10%;
+}
+.lista-filtros {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 2px darkgray;
+}
+td {
+    padding: 6px 4px;
+}
+ion-checkbox{
+    margin: 0 20px;
+}
+.botoesAcoes {
+    display: flex;
+    justify-content: flex-end;
+}
+.botoesAcoes ion-button {
+    margin: 30px 12px;
+}
+.campoPesquisa {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.input__campoPesquisa{
+    border-bottom: 1px solid gray;
+    margin: 0 30px 30px 30px;
+    width: 35%;
+}
+.botao-delete-master {
+    width: 60px;
+}
+.botoes-delete {
+    width: 118px;
+}
+
+.inputColuna {
+    min-height: 40px;
+}

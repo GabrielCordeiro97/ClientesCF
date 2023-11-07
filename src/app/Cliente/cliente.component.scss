@@ -1,0 +1,69 @@
+ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+
+}
+.row-cliente :hover{
+  background-color: rgba(216, 226, 236, 0.925)
+}
+
+.ion-text-wrap {
+  display: flex;
+}
+
+ion-label {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  justify-content: space-around;
+}
+ion-item h3 {
+  font-size: 0.9rem;
+  width: 9.5%;
+  text-align: center;
+}
+ion-checkbox {
+  margin: 20px;
+}
+ion-item .date {
+  float: right;
+  align-items: center;
+  display: flex;
+}
+
+ion-item ion-note {
+  // font-size: 15px;
+  margin-right: 8px;
+  font-weight: normal;
+}
+
+ion-item ion-note.md {
+  margin-right: 14px;
+}
+
+.dot {
+  display: block;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  align-self: start;
+  margin: 16px 10px 16px 16px;
+}
+
+.dot-unread {
+  background: var(--ion-color-primary);
+}
+
+.dados-cliente {
+  width: 94%;
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+}
+
+ion-footer ion-title {
+  font-size: 11px;
+  font-weight: normal;
+}
+ion-button {
+  width: 5%;
+}
