@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Platform, IonHeader, IonToolbar, IonButtons, IonBackButton, IonContent, IonItem, IonIcon, IonLabel, IonNote, IonButton } from '@ionic/angular/standalone';
+import { Platform, IonHeader, IonToolbar, IonButtons, IonBackButton, IonContent, IonItem, IonIcon, IonLabel, IonNote, IonButton, IonInput, IonText, IonToggle, IonTextarea } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { personCircle } from 'ionicons/icons';
 import { DataService, Cliente } from '../services/data.service';
@@ -10,7 +10,22 @@ import { DataService, Cliente } from '../services/data.service';
   templateUrl: './view-cliente.page.html',
   styleUrls: ['./view-cliente.page.scss'],
   standalone: true,
-  imports: [CommonModule, IonHeader, IonToolbar, IonButtons, IonBackButton, IonContent, IonItem, IonIcon, IonLabel, IonNote, IonButton],
+  imports: [CommonModule, 
+            IonHeader, 
+            IonToolbar, 
+            IonButtons, 
+            IonBackButton, 
+            IonContent, 
+            IonItem, 
+            IonIcon, 
+            IonLabel, 
+            IonNote, 
+            IonButton, 
+            IonInput, 
+            IonText,
+            IonToggle,
+            IonTextarea
+          ],
 })
 export class ViewClientePage implements OnInit {
   public cliente!: Cliente;

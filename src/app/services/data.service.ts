@@ -11,6 +11,8 @@ export interface Cliente {
   situacao: boolean;
   nascimento: string;
   endereco: string;
+  rg: string;
+  observacoes: string;
   selecionado:boolean
 }
 
@@ -30,6 +32,8 @@ export class DataService {
       situacao: true,
       nascimento: '15/06/1997',
       endereco: 'Rua Doutor Jose Palu',
+      rg: '276377025',
+      observacoes:'Cliente vip gosta de receber os alimentos frescos',
       selecionado:false
     },
     {
@@ -43,6 +47,8 @@ export class DataService {
       situacao: true,
       nascimento: '06/08/1989',
       endereco: 'Rua General Potiguar',
+      rg: '456328971',
+      observacoes:'',
       selecionado:false
     },
     {
@@ -53,9 +59,11 @@ export class DataService {
       telefone: '41123451222',
       celular: '41123451222',
       email: 'cordeiro.faria97@gmail.com',
-      situacao: true,
+      situacao: false,
       nascimento: '15/06/1997',
       endereco: 'Rua Doutor Jose Palu',
+      rg: '987123654',
+      observacoes:'',
       selecionado:false
     },
     {
@@ -69,6 +77,8 @@ export class DataService {
       situacao: true,
       nascimento: '21/07/1997',
       endereco: 'Rua Teste Teste',
+      rg: '123456789',
+      observacoes:'',
       selecionado:false
     },
   ];

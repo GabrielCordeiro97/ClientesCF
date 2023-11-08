@@ -38,21 +38,118 @@
   <div class="info-wrapper">
     <div class="info-gerais">
       <div class="info-header">
-        <h3>Informações Gerais</h3>
+        <h3>Informações do Cliente</h3>
+        <ion-icon slot="icon-only" color="light" src="../../assets/icon/person.svg"></ion-icon>
       </div>
-      {{ cliente.nomeComp }}
+      <div class="info-content">
+        <ion-item>
+          <ion-input required [value]="cliente.nomeComp" labelPlacement="stacked">
+            <div slot="label">
+              <ion-text color="medium">Nome Completo</ion-text>
+              <ion-text color="danger"> *</ion-text>
+            </div>
+          </ion-input>
+        </ion-item>
+        <div class="row-dupla">
+          <ion-item>
+            <ion-input [value]="cliente.nomeResumido" labelPlacement="stacked">
+              <div slot="label">
+                <ion-text color="medium">Nome Resumido</ion-text>
+              </div>
+            </ion-input>
+          </ion-item>
+          <div class="input-com-icon">
+            <ion-icon slot="icon-only" color="primary" src="../../assets/icon/calendar-number.svg"></ion-icon>
+            <ion-item>
+              <ion-input [value]="cliente.nascimento" labelPlacement="stacked">
+                <div slot="label">
+                  <ion-text color="medium">Data de Nascimento</ion-text>
+                </div>
+              </ion-input>
+            </ion-item>
+          </div>
+        </div>
+        <div class="row-dupla">
+          <ion-item>
+            <ion-input [value]="cliente.cpf" labelPlacement="stacked">
+              <div slot="label">
+                <ion-text color="medium">CPF</ion-text>
+                <ion-text color="danger"> *</ion-text>
+              </div>
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input [value]="cliente.rg" labelPlacement="stacked">
+              <div slot="label">
+                <ion-text color="medium">RG</ion-text>
+              </div>
+            </ion-input>
+          </ion-item>
+        </div>
+        <div class="info-toggle">
+          <p>Situação:</p>
+          <ion-toggle [checked]="cliente.situacao" labelPlacement="end">{{ cliente.situacao }}</ion-toggle>
+        </div>
+      </div>
     </div>
+
+
     <div class="info-contato">
       <div class="info-header">
-        <h3>Contato</h3>
+        <h3>Dados para Contato</h3>
+        <ion-icon slot="icon-only" color="light" src="../../assets/icon/call.svg"></ion-icon>
       </div>
-      {{ cliente.telefone}}
+      <div class="info-content">
+        <div class="row-dupla">
+          <div class="input-com-icon">
+            <ion-icon slot="icon-only" color="medium" src="../../assets/icon/call.svg"></ion-icon>
+            <ion-item>
+              <ion-input [value]="cliente.telefone" labelPlacement="stacked">
+                <div slot="label">
+                  <ion-text color="medium">Telefone</ion-text>
+                </div>
+              </ion-input>
+            </ion-item>
+          </div>
+          <div class="input-com-icon">
+            <ion-icon slot="icon-only" color="medium" src="../../assets/icon/phone-portrait-outline.svg"></ion-icon>
+            <ion-item>
+              <ion-input [value]="cliente.celular" labelPlacement="stacked">
+                <div slot="label">
+                  <ion-text color="medium">Celular</ion-text>
+                </div>
+              </ion-input>
+            </ion-item>
+          </div>
+        </div>
+        <div class="email">
+          <ion-icon slot="icon-only" color="medium" src="../../assets/icon/mail.svg"></ion-icon>
+          <ion-item>
+            <ion-input type="email" [value]="cliente.email" labelPlacement="stacked">
+              <div slot="label">
+                <ion-text color="medium">E-mail</ion-text>
+              </div>
+            </ion-input>
+          </ion-item>
+        </div>
+        <div class="observacoes">
+          <ion-item>
+            <ion-textarea rows="7" [value]="cliente.observacoes" labelPlacement="stacked">
+              <div slot="label">
+                <ion-text color="medium">Observações:</ion-text>
+              </div>
+            </ion-textarea>
+          </ion-item>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="endereco">
-    <div class="info-header">
-      <h3>Endereco</h3>
+  <div class="endereco-wrapper">
+    <div class="endereco">
+        <div class="info-header">
+          <h3>Endereço</h3>
+        </div>
+        <h1>{{ cliente.endereco }}</h1>
     </div>
-    <h1>{{ cliente.endereco }}</h1>
   </div>
 </ion-content>

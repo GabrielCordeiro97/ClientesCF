@@ -27,22 +27,81 @@ ion-item ion-note {
   margin-right: 12px;
   font-weight: normal;
 }
-
-h1 {
-  margin: 0;
-  font-weight: bold;
-  font-size: 22px;
-}
-
-p {
-  line-height: 22px;
-}
 .info-wrapper {
   display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-bottom: 40px;
 }
 .info-gerais, .info-contato {
   border: solid 1px lightgrey;
+  width: 45%;
+  margin-top: 30px;
 }
 .info-header {
   background-color: #3880ff;
+  height: 50px;
+  padding: 8px 20px 8px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.info-header h3 {
+  color: white;
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.info-header ion-icon {
+  font-size: 26px;
+}
+.info-gerais .info-content {
+  padding: 10px 20px 10px 0;
+}
+.row-dupla {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.row-dupla ion-item {
+  width: 44%;
+  margin: 15px 0;
+}
+.input-com-icon {
+  display: flex;
+  align-items: center;
+  width: 47%;
+}
+.input-com-icon ion-item, .email ion-item {
+  width: 100%;
+}
+.input-com-icon ion-icon, .email ion-icon {
+  font-size: 26px;
+}
+.info-contato .input-com-icon {
+  padding: 0px 20px ;
+}
+.email {
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.info-toggle {
+  padding: 0 0 20px 18px;
+}
+p {
+  font-size: small;
+  font-style: italic;
+  color: #7e7f81;
+}
+.endereco-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.endereco {
+  width: 95%;
+}
+.observacoes {
+  width: 98%;
 }
