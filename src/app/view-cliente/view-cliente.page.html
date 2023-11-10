@@ -149,7 +149,63 @@
         <div class="info-header">
           <h3>Endereço</h3>
         </div>
-        <h1>{{ cliente.endereco }}</h1>
+        <div class="endereco-rows">
+          <div class="endereco-row1">
+            <ion-item>
+              <ion-input [value]="cliente.celular" labelPlacement="stacked">
+                <div slot="label">
+                  <ion-text color="medium">CEP</ion-text>
+                </div>
+              </ion-input>
+            </ion-item>
+          </div>
+          <div class="endereco-row2">
+            <ion-item class="endereco-row2-mid-field">
+              <ion-input [value]="cliente.endereco" labelPlacement="stacked">
+                <div slot="label">
+                  <ion-text color="medium">Endereço</ion-text>
+                </div>
+              </ion-input>
+            </ion-item>
+            <ion-item class="endereco-row2-small-field">
+              <ion-input [value]="cliente.celular" labelPlacement="stacked">
+                <div slot="label">
+                  <ion-text color="medium">Número</ion-text>
+                </div>
+              </ion-input>
+            </ion-item>
+            <ion-item class="endereco-row2-mid-field">
+              <ion-input [value]="cliente.celular" labelPlacement="stacked">
+                <div slot="label">
+                  <ion-text color="medium">Complemento</ion-text>
+                </div>
+              </ion-input>
+            </ion-item>
+          </div>
+          <div class="endereco-row3">
+            <ion-item class="endereco-row2-mid-field">
+              <ion-input [value]="cliente.endereco" labelPlacement="stacked">
+                <div slot="label">
+                  <ion-text color="medium">Cidade</ion-text>
+                </div>
+              </ion-input>
+            </ion-item>
+            <ion-item class="endereco-row2-mid-field">
+              <ion-input [value]="cliente.celular" labelPlacement="stacked">
+                <div slot="label">
+                  <ion-text color="medium">Bairro</ion-text>
+                </div>
+              </ion-input>
+            </ion-item>
+            <ion-item class="endereco-row2-mid-field">
+              <ion-input [value]="cliente.celular" labelPlacement="stacked">
+                <div slot="label">
+                  <ion-text color="medium">Estado</ion-text>
+                </div>
+              </ion-input>
+            </ion-item>
+          </div>
+        </div>
     </div>
   </div>
 </ion-content>

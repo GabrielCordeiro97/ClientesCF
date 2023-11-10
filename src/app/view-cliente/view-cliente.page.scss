@@ -99,9 +99,23 @@ p {
   display: flex;
   justify-content: center;
 }
-.endereco {
-  width: 95%;
-}
 .observacoes {
   width: 98%;
+}
+.endereco {
+  width: 95%;
+  border: solid 1px lightgrey;
+}
+.endereco-rows {
+  padding: 10px 20px 20px 0;
+}
+.endereco-row2, .endereco-row3 {
+  display: flex;
+  justify-content: space-between;
+}
+.endereco-row2-mid-field {
+  width: 30%;
+}
+.endereco-row2-small-field {
+  width: 10%;
 }
