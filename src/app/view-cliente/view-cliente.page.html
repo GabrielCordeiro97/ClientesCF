@@ -10,10 +10,10 @@
       <ion-button>
         <ion-icon slot="icon-only"  src="../../assets/icon/person-add.svg"></ion-icon>
       </ion-button>
-      <ion-button>
+      <ion-button (click)="salvarCliente()">
         <ion-icon slot="icon-only"  src="../../assets/icon/save.svg"></ion-icon>
       </ion-button>
-      <ion-button>
+      <ion-button (click)="deletarCliente(cliente)" [routerLink]="'/home'">
         <ion-icon slot="icon-only"  src="../../assets/icon/trash.svg"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -21,20 +21,6 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" *ngIf="cliente">
-  <!-- <ion-item>
-    <ion-icon
-      aria-hidden="true"
-      name="person-circle"
-    ></ion-icon>
-    <ion-label class="ion-text-wrap">
-      <h2>
-        {{ cliente.nomeComp }}
-        <span class="date">
-          <ion-note>{{ cliente.telefone }}</ion-note>
-        </span>
-      </h2>
-    </ion-label>
-  </ion-item> -->
   <div class="info-wrapper">
     <div class="info-gerais">
       <div class="info-header">
@@ -152,7 +138,7 @@
         <div class="endereco-rows">
           <div class="endereco-row1">
             <ion-item>
-              <ion-input [value]="cliente.celular" labelPlacement="stacked">
+              <ion-input [value]="cliente.cep" labelPlacement="stacked">
                 <div slot="label">
                   <ion-text color="medium">CEP</ion-text>
                 </div>
@@ -168,14 +154,14 @@
               </ion-input>
             </ion-item>
             <ion-item class="endereco-row2-small-field">
-              <ion-input [value]="cliente.celular" labelPlacement="stacked">
+              <ion-input [value]="cliente.numero" labelPlacement="stacked">
                 <div slot="label">
                   <ion-text color="medium">Número</ion-text>
                 </div>
               </ion-input>
             </ion-item>
             <ion-item class="endereco-row2-mid-field">
-              <ion-input [value]="cliente.celular" labelPlacement="stacked">
+              <ion-input [value]="cliente.complemento" labelPlacement="stacked">
                 <div slot="label">
                   <ion-text color="medium">Complemento</ion-text>
                 </div>
@@ -184,21 +170,21 @@
           </div>
           <div class="endereco-row3">
             <ion-item class="endereco-row2-mid-field">
-              <ion-input [value]="cliente.endereco" labelPlacement="stacked">
+              <ion-input [value]="cliente.cidade" labelPlacement="stacked">
                 <div slot="label">
                   <ion-text color="medium">Cidade</ion-text>
                 </div>
               </ion-input>
             </ion-item>
             <ion-item class="endereco-row2-mid-field">
-              <ion-input [value]="cliente.celular" labelPlacement="stacked">
+              <ion-input [value]="cliente.bairro" labelPlacement="stacked">
                 <div slot="label">
                   <ion-text color="medium">Bairro</ion-text>
                 </div>
               </ion-input>
             </ion-item>
             <ion-item class="endereco-row2-mid-field">
-              <ion-input [value]="cliente.celular" labelPlacement="stacked">
+              <ion-input [value]="cliente.estado" labelPlacement="stacked">
                 <div slot="label">
                   <ion-text color="medium">Estado</ion-text>
                 </div>

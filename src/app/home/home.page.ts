@@ -18,13 +18,15 @@ import { ClienteComponent } from '../Cliente/cliente.component';
 import { FormsModule } from '@angular/forms';
 import { CheckboxService } from '../Cliente/checkbox.service';
 import { DataService, Cliente } from '../services/data.service';
-
-@Component({
+import { ViewClientePage } from '../view-cliente/view-cliente.page';
+import { HttpClientModule } from '@angular/common/http'
+ @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
   imports: [CommonModule,
+            HttpClientModule,
             IonHeader, 
             IonToolbar, 
             IonTitle, 
@@ -39,30 +41,34 @@ import { DataService, Cliente } from '../services/data.service';
             IonInput,
             IonCheckbox,
             FormsModule,
-            ClienteComponent],
+            ClienteComponent,
+            ViewClientePage],
 })
 export class HomePage {
   private data = inject(DataService);
   constructor(private checkboxService: CheckboxService) {
+    this.listaFiltrada = this.getClientes()
   }
-
   filterValues: any = {};
   temFiltro: boolean = true
   estadoCheckbox: boolean = false;
-  listaFiltrada:any = this.getClientes();
+  listaFiltrada:any = []
   checkboxMaster = false;
 
   checkFilter(coluna: string){
     const pesquisa = this.filterValues[coluna].toLowerCase();
     if (!pesquisa) {
-      this.listaFiltrada = this.getClientes()
+      this.atualizaListaFiltrada();
     } else {
       this.listaFiltrada = this.listaFiltrada.filter((cliente: any) => {
         return cliente[coluna].toLowerCase().includes(pesquisa)
       })
     }
   }
-
+  atualizaListaFiltrada(){
+    console.log("executou o lista filtrada")
+    this.listaFiltrada = this.data.getClientes();
+  }
   refresh(ev: any) {
     setTimeout(() => {
       (ev as RefresherCustomEvent).detail.complete();
@@ -86,5 +92,4 @@ export class HomePage {
     }
     this.checkboxChanged();
   }
-
 }

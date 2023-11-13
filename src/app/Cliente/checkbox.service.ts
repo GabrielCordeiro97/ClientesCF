@@ -35,7 +35,6 @@ export class CheckboxService {
     for (const cliente of this.clientes) {
         this.adicionarClienteSelecionado(cliente.id);
     }
-    
   }
   removeTodosClientes() {
     this.clientesSelecionados = []

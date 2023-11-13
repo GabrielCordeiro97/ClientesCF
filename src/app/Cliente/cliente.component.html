@@ -20,7 +20,7 @@
       <h3>{{ cliente.nascimento }}</h3>
       <h3>{{ cliente.endereco }}</h3>
     </div>
-      <ion-button fill="blank" size="8">
+      <ion-button fill="blank" size="8" (click)="deletarCliente(cliente)">
         <ion-icon slot="icon-only" color="danger" src="../../assets/icon/trash.svg"></ion-icon>
       </ion-button>
   </ion-item>

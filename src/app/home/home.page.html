@@ -87,12 +87,15 @@
         <ion-input class="inputColuna"[disabled]="true" fill="outline" size="8"></ion-input>
       </td>
     </tr>
+    <!-- <button (click)="atualizaListaFiltrada()">ATUALIZA</button> -->
     <app-cliente 
         *ngFor="let cliente of listaFiltrada" 
         (estadoCheckbox)="checkboxChanged()"
         [cliente]="cliente" 
         [valorCheckboxMaster]="checkboxMaster" 
-        [checkFilter]="listaFiltrada">
+        [checkFilter]="listaFiltrada"
+        (atualizarListaFiltrada)="atualizaListaFiltrada()"
+        >
     </app-cliente>
   </ion-list>
 </ion-content>

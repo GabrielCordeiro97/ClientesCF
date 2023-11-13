@@ -20,13 +20,21 @@ export class ClienteComponent {
   @Input() cliente?: Cliente;
   @Input() valorCheckboxMaster?: boolean;
   @Input() checkFilter?: string;
+
+  private data = inject(DataService);
   constructor(private checkboxService: CheckboxService) {
     addIcons({ chevronForward });
   }
 
   // Funcionalidade evento checkbox
   @Output() estadoCheckbox: EventEmitter<any> = new EventEmitter()
+  @Output() atualizarListaFiltrada: EventEmitter<any> = new EventEmitter()
 
+  deletarCliente(cliente: Cliente) {
+    const id = cliente.id
+    // this.data.removendoCliente(id);
+    this.atualizarListaFiltrada.emit()
+  }
   onCheckboxChange(cliente: any) {
     if (this.checkboxService.clientesSelecionados.includes(cliente.id)) {
       this.checkboxService.removerClienteSelecionado(cliente.id);

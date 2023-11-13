@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 
 export interface Cliente {
   id: string;
@@ -10,7 +10,13 @@ export interface Cliente {
   email: string;
   situacao: boolean;
   nascimento: string;
+  cep: string;
   endereco: string;
+  numero: string;
+  complemento: string;
+  cidade: string;
+  bairro: string;
+  estado: string;
   rg: string;
   observacoes: string;
   selecionado:boolean
@@ -31,7 +37,13 @@ export class DataService {
       email: 'gabriel.faria97@hotmail.com',
       situacao: true,
       nascimento: '15/06/1997',
+      cep: '81020050',
       endereco: 'Rua Doutor Jose Palu',
+      numero: '467',
+      complemento: 'bloco 5A, Ap 22',
+      cidade: 'Curitiba',
+      bairro: 'Novo Mundo',
+      estado: 'Paraná',
       rg: '276377025',
       observacoes:'Cliente vip gosta de receber os alimentos frescos',
       selecionado:false
@@ -46,7 +58,13 @@ export class DataService {
       email: 'daniel.faria97@gmail.com',
       situacao: true,
       nascimento: '06/08/1989',
-      endereco: 'Rua General Potiguar',
+      cep: '81020050',
+      endereco: 'Rua Doutor Jose Palu',
+      numero: '467',
+      complemento: 'bloco 5A, Ap 22',
+      cidade: 'Curitiba',
+      bairro: 'Novo Mundo',
+      estado: 'Paraná',
       rg: '456328971',
       observacoes:'',
       selecionado:false
@@ -61,7 +79,13 @@ export class DataService {
       email: 'cordeiro.faria97@gmail.com',
       situacao: false,
       nascimento: '15/06/1997',
+      cep: '81020050',
       endereco: 'Rua Doutor Jose Palu',
+      numero: '467',
+      complemento: 'bloco 5A, Ap 22',
+      cidade: 'Curitiba',
+      bairro: 'Novo Mundo',
+      estado: 'Paraná',
       rg: '987123654',
       observacoes:'',
       selecionado:false
@@ -76,20 +100,31 @@ export class DataService {
       email: 'bruno.petito@gmail.com',
       situacao: true,
       nascimento: '21/07/1997',
-      endereco: 'Rua Teste Teste',
+      cep: '81020050',
+      endereco: 'Rua Teste Testado',
+      numero: '472',
+      complemento: '',
+      cidade: 'Rio de Janeiro',
+      bairro: 'Copacabana',
+      estado: 'Rio de Janeiro',
       rg: '123456789',
       observacoes:'',
       selecionado:false
     },
   ];
 
-  constructor() { }
+  constructor() { 
 
+  }
   public getClientes(): Cliente[] {
     return this.clientes;
   }
 
   public getClientesById(id: string): any {
     return this.clientes.find((cliente: Cliente) => cliente.id === id);
+  }
+  public removendoCliente(id: string): any{
+    this.clientes = this.clientes.filter((cliente: Cliente) => cliente.id !== id)
+    console.log(this.clientes)
   }
 }
